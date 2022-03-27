@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Google Map API</title>
+        <link rel="stylesheet" href="styles.css">
+        <!-- include angular js cdn link -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <!-- include map -->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=your_own_map_api_key_from_google"></script>
+
+        <!-- link to external js file -->
+        <script src="map.js"></script>
+    </head>
+<body ng-app="myMapApp" ng-controller = "myMapCtrl">
+    <h3 style="text-align: center;">{{title}}</h3> <hr><hr>
+    <button ng-click="initializeMap()">Reload Map</button>
+    <div id="map" style="height: 600px; width: 1200px; display: block;"></div>
+    <script>
+        var app = angular.module('myMapApp', []);
+        app.controller('myMapCtrl', myMapController);
+        //.directive('myDirective', ListItem);
+        // app.service('myService', myService)
+    </script> 
+</body>
+</html>

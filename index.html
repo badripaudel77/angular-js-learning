@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS Practice </title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- include angular js cdn link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- link to external js file -->
+    <script src="app.js"></script>
+</head>
+<body ng-app="myApp" ng-controller = "myCtrl">
+    <div class="helloDiv">
+        Hello {{fullname}}
+    </div> 
+    <hr>
+        <form class="form" name="myNgForm" autocomplete="off">
+                <input type="text" name="name" id="name" required placeholder="Enter name" ng-model = "name">
+                <input type="text" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" name="email" required id="email" placeholder="Enter Email" ng-model="email">
+                <input type="number" name="phone" id="phone" required placeholder="Enter Phone Number" ng-model="phone">
+                <span><input type="checkbox" name="terms"required ng-model="termsAndConditions"> Agree Terms & Condtions </span>
+
+                <button type="button" ng-click="submitForm()" class="submitBtn" ng-disabled="!myNgForm.$valid" 
+                style="padding: 10px; width: 200px; margin: 20px; float: left;">Submit</button>
+                <span ng-show="myNgForm.name.$valid" style="color: green;">Name : Valid</span>
+                <span ng-show="myNgForm.name.$invalid" style="color: red;">Name : Invalid</span>
+                <span>Email : {{myNgForm.email.$valid ? "Ok" : "Invalid"}}</span>
+                <span>Phone Number : {{myNgForm.phone.$valid ? "Ok" : "Invalid"}}</span>
+                <span>Agreed Terms & Conditions : {{myNgForm.terms.$valid ? "OK" : "Invalid"}}</span>
+                <span>Overall Form is {{myNgForm.$valid ? "Ok" : "Invalid"}} </span>
+        </form> 
+        <div ng-repeat = "item in items"> 
+            <my-directive></my-directive>
+        </div>
+        <hr>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', myController)
+        .directive('myDirective', ListItem);
+        // app.service('myService', myService)
+    </script> 
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: gainsboro;
+}
+
+.helloDiv {
+ text-align: center;
+ margin: 10px;
+}
+
+.form {
+    height: auto;
+    width: 80%;
+    background-color: antiquewhite;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form input {
+    padding: 10px;
+    margin: 10px 5px;
+}
+
+.submitBtn {
+    /* background-color: blueviolet; */
+    /* color: white; */
+    cursor: pointer;
+    border-radius: 30px;
+    outline: none;
+}
+
+/* styling map */
+.map {
+
+    background-color: gray;
+}
