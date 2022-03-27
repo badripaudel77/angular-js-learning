@@ -1,21 +1,20 @@
-console.log(">>> Angular JS App has loaded.")
+console.log(">>> Angular JS App has loaded.");
+let app = angular.module('myApp', ['pascalprecht.translate']);
 
-function myController($scope) {
-    $scope.fullname = "Badri Paudel";
+app.config(function($translateProvider) {
+    $translateProvider.translations('en', {
+      HEADLINE: 'Hello there, This is my awesome app!',
+      INTRO_TEXT: 'And it has i18n support!'
+    })
+    .translations('de', {
+      HEADLINE: 'Hey, das ist meine großartige App!',
+      INTRO_TEXT: 'Und sie untersützt mehrere Sprachen!'
+    });
+    $translateProvider.preferredLanguage('en');
+  });
 
-    $scope.items = ['First Item', 'Second Item', 'Third Item'];
-    $scope.title = '';
-
-    $scope.submitForm = function() {
-        alert("submitForm");
-    }
-}
-
-// factory function that returns ddo
- function ListItem() {
-    let ddo = {
-        restrict: 'AE',
-        templateUrl : 'myDirective.html',   
+  app.controller('translateController', function($translate, $scope) {
+    $scope.changeLanguage = function (langKey) {
+      $translate.use(langKey);
     };
-    return ddo;
-}
+  });
