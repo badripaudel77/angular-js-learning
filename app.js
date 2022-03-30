@@ -33,8 +33,8 @@ console.log("Config file loaded.");
 /*
  angular.module('myApp').config(['$translateProvider', function($translateProvider) {
   console.log("loading config");
-  $translateProvider.useUrlLoader('https://jsonplaceholder.typicode.com/todos/1?lang=en_US');
-  $translateProvider.preferredLanguage('sv_SV');
+  $translateProvider.useUrlLoader('https://jsonplaceholder.typicode.com/todos/1?lang=en');
+  $translateProvider.preferredLanguage('en');
 }]);
 */
 
