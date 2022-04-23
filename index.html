@@ -18,12 +18,12 @@
 <body ng-app="myApp" ng-controller="translateController">
         <div style="text-align: center; font-size: 20px;">angular-translate app demo</div>
         <hr> 
-        <button ng-click="changeLanguage('de')">German</button>
+        <button ng-click="changeLanguage('es')">Spanish</button>
         <button ng-click="changeLanguage('en')">English</button>
 
         <h2>{{'HEADLINE' | translate}}</h2>        
         <p>{{'INTRO_TEXT' | translate}}</p>
-        <p>{{'INTRO_TEXT' | translate:'de'}}</p> 
+        <p>{{'INTRO_TEXT' | translate:'es'}}</p> 
         <p translate="INTRO_TEXT"></p>
 </body>
 </html>

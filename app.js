@@ -15,9 +15,9 @@ console.log("Config file loaded.");
       HEADLINE: 'Hello there, This is my awesome app!',
       INTRO_TEXT: 'And it has i18n support!'
     })
-    .translations('de', {
-      HEADLINE: 'Hey, das ist meine großartige App!',
-      INTRO_TEXT: 'Und sie untersützt mehrere Sprachen!'
+    .translations('es', {
+    "HEADLINE": "Hello, How are you ? ",
+    "INTRO_TEXT": "Hello, I am from Nepal"
     });
     $translateProvider.preferredLanguage('en');
   });
@@ -42,7 +42,7 @@ console.log("Config file loaded.");
 /*
  ** translation using static json file and changing at runtime
  ** folder will have json file with key like key: {key: value, ....}
- ** de -> for german
+ ** es -> for spanish
  ** en -> for english
 */
 angular.module('myApp').config(['$translateProvider', function($translateProvider) {
@@ -53,7 +53,7 @@ angular.module('myApp').config(['$translateProvider', function($translateProvide
   })
     // remove the warning from console log by putting the sanitize strategy
     .useSanitizeValueStrategy('sanitizeParameters')    
-    .preferredLanguage(1>2?'de':'en');
+    .preferredLanguage(1>2?'es':'en'); // here preferred language can be selected based on certain condition....
 }]);
 
 
