@@ -12,12 +12,12 @@ console.log("App = ", app);
 app.config(function($translateProvider) {
 console.log("Config file loaded.");
     $translateProvider.translations('en', {
-      HEADLINE: 'Hello there, This is my awesome app!',
-      INTRO_TEXT: 'And it has i18n support!'
+        "HEADLINE": "Hello, How are you ? ",
+        "INTRO_TEXT": "Hello, I am from Nepal"
     })
     .translations('es', {
-    "HEADLINE": "Hello, How are you ? ",
-    "INTRO_TEXT": "Hello, I am from Nepal"
+      "HEADLINE": "Hola, Como estas?",
+      "INTRO_TEXT": "Hola, soy de Nepal"
     });
     $translateProvider.preferredLanguage('en');
   });
